@@ -41,6 +41,9 @@
   overflow: hidden;
   width: 100%;
   border-bottom: 1px solid rgb(201, 201, 201);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .navbar a {
@@ -62,4 +65,14 @@
   color: #ddd;
   text-transform: uppercase;
   font-weight: bolder;
+}
+
+.cart-widget {
+  margin-left: auto;
+  margin-right: 1.25%;
+}
+
+.cart-items {
+  margin-left: 5px;
+  font-size: 1.25rem;
 }
