@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemCount from './ItemCount.js';
 
 class ItemListContainer extends React.Component {
     constructor(props) {
@@ -9,7 +10,11 @@ class ItemListContainer extends React.Component {
     }
 
     render() {
-        return <div style={{ paddingTop: 50}}>{this.props.greeting}</div>
+        return (
+            <div style={{ paddingTop: 50}}>
+                <ItemCount stock="20" />
+            </div>
+        );
     }
 }
 
