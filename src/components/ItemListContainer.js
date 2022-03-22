@@ -4,7 +4,7 @@ import ItemCount from './ItemCount.js';
 const ItemListContainer = (props) => {
     return (
         <div style={{ paddingTop: 50}}>
-            <ItemCount />
+            <ItemCount stock="13" initial="1" />
         </div>
     );
 }
