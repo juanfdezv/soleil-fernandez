@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar/>
-        <ItemListContainer greeting="Hola! Este es un greeting pasado a través de una prop en ItemListContainer"/>
+        <ItemListContainer />
       </header>
     </div>
   );
