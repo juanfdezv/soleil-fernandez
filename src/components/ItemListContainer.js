@@ -12,7 +12,7 @@ const ItemListContainer = () => {
             .then(res => setProductList(res))
             .catch(err => console.log(err))
             .finally(() => setLoading(false));
-    });
+    }, []);
     
     return (
         <div style={{ paddingTop: 50 }}>
