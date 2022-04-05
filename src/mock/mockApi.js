@@ -6,6 +6,7 @@ const products = [
         pictureUrl: "https://content.moss.co.uk/images/extraextralarge/966676501_04.webp",
         description: "Una simple camisa blanca",
         category: "camisas",
+        stock: 15,
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const products = [
         pictureUrl: "https://content.moss.co.uk/images/extraextralarge/966680491_04.webp",
         description: "Una simple camisa celeste",
         category: "camisas",
+        stock: 15,
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ const products = [
         pictureUrl: "https://content.moss.co.uk/images/extraextralarge/966660709_04.webp",
         description: "Una simple camisa azul",
         category: "camisas",
+        stock: 15,
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ const products = [
         pictureUrl: "https://content.moss.co.uk/images/extraextralarge/966680604_05.webp",
         description: "Una simple camisa rosa",
         category: "camisas",
+        stock: 15,
     },
     {
         id: 5,
@@ -38,6 +42,7 @@ const products = [
         pictureUrl: "https://via.placeholder.com/750x1125",
         description: "Una simple campera negra",
         category: "camperas",
+        stock: 15,
     },
     {
         id: 6,
@@ -46,6 +51,7 @@ const products = [
         pictureUrl: "https://via.placeholder.com/750x1125",
         description: "Una simple campera verde",
         category: "camperas",
+        stock: 15,
     },
     {
         id: 7,
@@ -54,6 +60,7 @@ const products = [
         pictureUrl: "https://via.placeholder.com/750x1125",
         description: "Un simple pantalón negro",
         category: "pantalones",
+        stock: 15,
     },
 ];
 

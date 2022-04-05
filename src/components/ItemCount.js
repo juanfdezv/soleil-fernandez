@@ -1,33 +1,24 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
-const ItemCount = ({stock, initial}) => {
-    const [counter, setCounter] = useState(parseInt(initial));
+const ItemCount = ({stock = 10, cantidad, setCantidad, onAdd}) => {
 
-    const increaseCount = () => {
-        if(counter < stock){
-            setCounter(counter + 1);
-        }
+    const handleIncrease = () => {
+        cantidad < stock && setCantidad(cantidad + 1);
     }
 
-    const decreaseCount = () => {
-        if(counter > initial){
-            setCounter(counter - 1);
-        }
-    }
-
-    const onAdd = () => {
-        console.log(counter);
+    const handleDecrease = () => {
+        cantidad > 1 && setCantidad(cantidad - 1);
     }
 
     return(
         <div className="item-count-container">
-            <p className="item-title">Camisa</p>
             <div className="count-container">
-                <button onClick={decreaseCount} className="count-button">-</button>
-                <span className="count-number">{counter}</span>
-                <button onClick={increaseCount} className="count-button">+</button>
+                <button onClick={handleDecrease} className="count-button">-</button>
+                <span className="count-number">{cantidad}</span>
+                <button onClick={handleIncrease} className="count-button">+</button>
             </div>
-            <button onClick={onAdd} className="addToCart-button">Agregar al carrito</button>
+            <Link to="/cart"><button onClick={onAdd} className="addToCart-button">Agregar al carrito</button></Link>
         </div>
     );
 }
