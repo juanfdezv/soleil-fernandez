@@ -18,7 +18,7 @@ const ItemCount = ({stock = 10, cantidad, setCantidad, onAdd}) => {
                 <span className="count-number">{cantidad}</span>
                 <button onClick={handleIncrease} className="count-button">+</button>
             </div>
-            <Link to="/cart"><button onClick={onAdd} className="addToCart-button">Agregar al carrito</button></Link>
+            <button onClick={onAdd} className="addToCart-button">Agregar al carrito</button>
         </div>
     );
 }
