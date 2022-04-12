@@ -14,6 +14,19 @@ export const CartProvider = ({children}) => {
         setCart(cart.filter(prod => prod.id !== id));
     }
 
+    const updateQuantity = (id, cantidad) => {
+        setCart(
+            cart.map(prod => {
+                if(prod.id === id){
+                    cantidad = prod.cantidad + cantidad;
+                    return { ...prod, cantidad };
+                }else{
+                    return prod;
+                }
+            })
+        );
+    }
+
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id);
     }
@@ -38,7 +51,8 @@ export const CartProvider = ({children}) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            updateQuantity
         }}>
             {children}
         </CartContext.Provider>

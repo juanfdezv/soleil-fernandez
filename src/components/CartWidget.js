@@ -12,7 +12,7 @@ const CartWidget = () => {
     return (
         <Link to={"/cart"} className="cart-widget">
             <FontAwesomeIcon icon={faCartShopping} />
-            <span className="cart-items">{cartQuantity()}</span>
+            <span className="cart-items">{cartQuantity() || ""}</span>
         </Link>
     );
 }

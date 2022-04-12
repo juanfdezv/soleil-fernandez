@@ -6,7 +6,7 @@ import { CartContext } from '../context/CartContext.js';
 const ItemDetail = ({productDetail}) => {
     const {title, price, description, pictureUrl, stock, id} = productDetail;
     const navigate = useNavigate();
-    const { addItem, isInCart } = useContext(CartContext);
+    const { addItem, isInCart, updateQuantity } = useContext(CartContext);
     const [comprado, setComprado] = useState(false);
 
     const handleNavigate = () => {
@@ -17,13 +17,17 @@ const ItemDetail = ({productDetail}) => {
 
     const addToCart = () => {
         setComprado(true);
-        const itemToAdd = {
-            id,
-            title,
-            price,
-            cantidad
+        if(isInCart(id)){
+            updateQuantity(id, cantidad);
+        }else{
+            const itemToAdd = {
+                id,
+                title,
+                price,
+                cantidad
+            }
+            addItem(itemToAdd);
         }
-        addItem(itemToAdd);
     }
 
     return(
