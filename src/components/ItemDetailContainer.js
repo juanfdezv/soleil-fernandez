@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail.js';
-import { getProducts } from '../mock/mockApi.js';
 import '../styles/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
+import { db } from '../firebase/config.js';
+import { doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -12,11 +13,16 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true);
-        getProducts
-            .then(res => setProductDetail(res.find(item => item.id === Number(itemId))))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false));
-    },[itemId]);
+        const docRef = doc(db, "productos", itemId);
+        getDoc(docRef)
+            .then(doc => {
+                setProductDetail({id: doc.id, ...doc.data()});
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }, [itemId]);
+
     return(
         <div className="item-detail-container">
             {loading ? <p>Cargando...</p> : <ItemDetail productDetail={productDetail} />}
