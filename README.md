@@ -14,7 +14,7 @@ Soleil es un e-commerce para la venta de ropa. El proyecto fue desarrollado para
 
 ## App en funcionamiento:
 
-![](https://i.ibb.co/DzL3HrM/soleil-App.gif)
+![](https://iili.io/Wu1isS.gif)
 
 ### Autor
 
